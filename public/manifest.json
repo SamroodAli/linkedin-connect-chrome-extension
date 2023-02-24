@@ -14,7 +14,7 @@
         "https://*.linkedin.com/*"
       ],
       "js": [
-        "index.js"
+        "content.js"
       ]
     }
   ]
