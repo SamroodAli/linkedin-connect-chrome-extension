@@ -26,10 +26,9 @@ class ExtensionMessaging {
       throw new Error("Active tab id not present");
     }
 
-    const response = await chrome.tabs.sendMessage(this.activeTab.id, {
-      type,
-      data,
-    });
+    const message: Message = { type, data };
+
+    const response = await chrome.tabs.sendMessage(this.activeTab.id, message);
 
     return response;
   }
