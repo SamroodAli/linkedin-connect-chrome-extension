@@ -35,8 +35,7 @@ async function connectButtonClick(
       if (isDemo) {
         button.style.backgroundColor = "red";
       } else {
-        console.log("clicked but why");
-        // button.click();
+        button.click();
       }
       resolve(button);
     }, timeout);

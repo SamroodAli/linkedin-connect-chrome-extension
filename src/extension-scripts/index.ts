@@ -8,5 +8,9 @@ async function main() {
 }
 
 function connectBtnClick() {
-  messagingClient.send({ type: "CONNECT_BTN_CLICK", data: { isDemo: true } });
+  const isDemoCheckBox = <HTMLInputElement>document.getElementById("is-demo");
+  messagingClient.send({
+    type: "CONNECT_BTN_CLICK",
+    data: { isDemo: isDemoCheckBox.checked }
+  });
 }
