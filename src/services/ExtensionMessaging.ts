@@ -1,9 +1,9 @@
-import { Message, MessageType } from "../models/Message";
+import { MessageConsumeFn } from "../models/Message";
 
 class ExtensionMessaging {
   activeTab?: chrome.tabs.Tab;
 
-  private async getActiveTab() {
+  private getActiveTab = async () => {
     const [tab] = await chrome.tabs.query({
       active: true,
       lastFocusedWindow: true,
@@ -14,10 +14,10 @@ class ExtensionMessaging {
     }
 
     return tab;
-  }
+  };
 
   /** send message of any format */
-  async send(type: MessageType, data?: any) {
+  send: MessageConsumeFn = async (message) => {
     if (!this.activeTab) {
       this.activeTab = await this.getActiveTab();
     }
@@ -26,12 +26,10 @@ class ExtensionMessaging {
       throw new Error("Active tab id not present");
     }
 
-    const message: Message = { type, data };
-
     const response = await chrome.tabs.sendMessage(this.activeTab.id, message);
 
     return response;
-  }
+  };
 }
 
 export const messagingClient = new ExtensionMessaging();
