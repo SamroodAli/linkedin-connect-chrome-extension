@@ -4,9 +4,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        "pop-up": "pop-up.html",
-        content: "src/content.ts",
-        // background: "src/background.ts",
+        extension: "extension.html",
+        webPage: "src/scripts/webPage.ts",
       },
       output: {
         entryFileNames: `[name].js`,

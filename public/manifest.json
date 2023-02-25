@@ -5,7 +5,7 @@
   "description": "A quick way to connect Linkedin users",
   "version": "0.0.1",
   "action": {
-    "default_popup": "pop-up.html",
+    "default_popup": "extension.html",
     "default_title": "Linkedin connect"
   },
   "content_scripts": [
@@ -14,7 +14,7 @@
         "https://*.linkedin.com/*"
       ],
       "js": [
-        "content.js"
+        "webPage.js"
       ]
     }
   ]

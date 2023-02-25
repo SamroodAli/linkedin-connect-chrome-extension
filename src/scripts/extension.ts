@@ -1,4 +1,4 @@
-import { messagingClient } from "./services/ExtensionMessaging";
+import { messagingClient } from "../services/ExtensionMessaging";
 
 main();
 

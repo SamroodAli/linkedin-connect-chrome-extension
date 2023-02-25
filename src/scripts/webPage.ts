@@ -1,4 +1,4 @@
-import { messagingClient } from "./services/WebPageMessaging";
+import { messagingClient } from "../services/WebPageMessaging";
 
 main();
 
