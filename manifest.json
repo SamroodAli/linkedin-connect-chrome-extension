@@ -15,7 +15,8 @@
       ],
       "js": [
         "./src/content-scripts/index.ts"
-      ]
+      ],
+      "run_at": "document_start"
     }
   ]
 }
