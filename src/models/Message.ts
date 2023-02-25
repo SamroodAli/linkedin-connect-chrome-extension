@@ -1,4 +1,9 @@
+export enum MessageType {
+  CONNECT_BTN_CLICK = "CONNECT_BTN_CLICK"
+}
+
 export interface Message {
-  type: string;
+  type: MessageType;
   data: any;
 }
+

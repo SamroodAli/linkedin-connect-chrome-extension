@@ -1,13 +1,13 @@
-import { Message } from "../models/Message";
+import { Message, MessageType } from "../models/Message";
 
 type Callback = () => any;
 
 class WebPageMessaging {
   private isSubscribed = false;
-  private subscriptions: Map<string, Callback> = new Map();
+  private subscriptions: Map<MessageType, Callback> = new Map();
 
-  public subscribeToExtension(message: string, callback: Callback) {
-    this.subscriptions.set(message, callback);
+  public subscribeToExtension(type: MessageType, callback: Callback) {
+    this.subscriptions.set(type, callback);
 
     // subscribe if haven't subscribed already.
     if (!this.isSubscribed) {
@@ -27,6 +27,7 @@ class WebPageMessaging {
           throw new Error("Message not from the extension");
         }
 
+ 
         const callback = this.subscriptions.get(request.type);
 
         if (!callback) {

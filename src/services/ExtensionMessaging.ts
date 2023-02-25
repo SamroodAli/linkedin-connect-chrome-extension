@@ -1,4 +1,4 @@
-import { Message } from "../models/Message";
+import { Message, MessageType } from "../models/Message";
 
 class ExtensionMessaging {
   activeTab?: chrome.tabs.Tab;
@@ -17,7 +17,7 @@ class ExtensionMessaging {
   }
 
   /** send message of any format */
-  async send(type: string, data?: any) {
+  async send(type: MessageType, data?: any) {
     if (!this.activeTab) {
       this.activeTab = await this.getActiveTab();
     }
