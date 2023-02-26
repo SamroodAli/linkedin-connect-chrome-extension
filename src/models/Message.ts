@@ -1,6 +1,7 @@
 // message types and their data
 export interface MessageTypeDataMap {
-  CONNECT_BTN_CLICK: OnConnectClickPayload;
+  START_CONNECTING: OnConnectClickPayload;
+  STOP_CONNECTING: null;
 }
 
 // type of messages is just inferred from MessagePayload

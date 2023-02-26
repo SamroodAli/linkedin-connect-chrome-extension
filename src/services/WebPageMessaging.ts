@@ -24,11 +24,13 @@ class WebPageMessaging {
   }
 
   /** Private chrome subscription to messages from the extension */
-  private async subscribe() {
+  private subscribe() {
     if (this.isSubscribed) {
       // already subscribed
       return;
     }
+
+    this.isSubscribed = true;
 
     chrome.runtime.onMessage.addListener(
       (request: Message, sender, sendResponse) => {
