@@ -11,20 +11,23 @@ class WebPageMessaging {
    * @param type type of the message from MessageType
    * @param callback a callback that accepts the MessageData based on the type
    */
-  public subscribeToExtension<
+  public subscribeToExtension = <
     T extends MessageType = MessageType,
     P extends MessageTypeDataMap[T] = MessageTypeDataMap[T]
-  >(type: T, callback: Callback<P>) {
+  >(
+    type: T,
+    callback: Callback<P>
+  ) => {
     this.subscriptions.set(type, callback);
 
     // subscribe if haven't subscribed already.
     if (!this.isSubscribed) {
       this.subscribe();
     }
-  }
+  };
 
   /** Private chrome subscription to messages from the extension */
-  private subscribe() {
+  private subscribe = () => {
     if (this.isSubscribed) {
       // already subscribed
       return;
@@ -49,7 +52,7 @@ class WebPageMessaging {
         sendResponse(response);
       }
     );
-  }
+  };
 }
 
 export const messagingClient = new WebPageMessaging();
