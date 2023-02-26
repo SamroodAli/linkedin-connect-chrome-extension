@@ -3,11 +3,11 @@ import { messagingClient } from "../services/ExtensionMessaging";
 let isRunning = false;
 
 const button = document.getElementById("connect-btn");
+const isDemoCheckBox = <HTMLInputElement>document.getElementById("is-demo");
 
 button?.addEventListener("click", connectBtnClick);
 
 function connectBtnClick() {
-  const isDemoCheckBox = <HTMLInputElement>document.getElementById("is-demo");
   if (!button) throw new Error("button not found");
 
   if (isRunning) {
