@@ -10,7 +10,6 @@ function connectBtnClick() {
   const isDemoCheckBox = <HTMLInputElement>document.getElementById("is-demo");
   if (!button) throw new Error("button not found");
 
-  console.log(isRunning);
   if (isRunning) {
     button.textContent = "START CONNECTING";
     isRunning = false;

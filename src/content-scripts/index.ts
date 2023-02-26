@@ -34,7 +34,6 @@ async function connectButtonClick(
   isFirst = true,
   timeout = isFirst ? 0 : randomIntFromInterval(3000, 5000)
 ) {
-  console.log(arguments);
   if (currentIndex >= allButtons.length) return;
 
   const button = allButtons[currentIndex];
@@ -46,7 +45,6 @@ async function connectButtonClick(
     return;
   }
 
-  console.log(timeout);
   setTimeout(() => {
     if (!isRunning) {
       return;
