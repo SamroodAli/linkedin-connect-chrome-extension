@@ -1,6 +1,6 @@
 import { OnConnectClickPayload } from "../models/Message";
 
-class LinkedInConnector {
+export class LinkedInConnector {
   private isRunning = false;
   private currentIndex = 0;
 

@@ -2,7 +2,7 @@ import { MessageTypeDataMap, MessageType, Message } from "../models/Message";
 
 type Callback<Payload> = (payload: Payload) => any;
 
-class WebPageMessaging {
+export class WebPageMessaging {
   private isSubscribed = false;
   private subscriptions: Map<MessageType, Callback<any>> = new Map();
 

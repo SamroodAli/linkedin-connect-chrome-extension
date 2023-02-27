@@ -1,27 +1,15 @@
 import { messagingClient } from "../services/ExtensionMessaging";
+import { LinkedInExtension } from "../services/LinkedinExtension";
 
-let isRunning = false;
+main();
 
-const button = document.getElementById("connect-btn");
-const isDemoCheckBox = <HTMLInputElement>document.getElementById("is-demo");
+function main() {
+  // get connect button
+  const connectBtn = <HTMLButtonElement>document.getElementById("connect-btn");
 
-button?.addEventListener("click", connectBtnClick);
+  // get demo checkbox
+  const isDemoCheckBox = <HTMLInputElement>document.getElementById("is-demo");
 
-function connectBtnClick() {
-  if (!button) throw new Error("button not found");
-
-  if (isRunning) {
-    button.textContent = "START CONNECTING";
-    isRunning = false;
-
-    messagingClient.send({ type: "STOP_CONNECTING", data: null });
-  } else {
-    button.textContent = "STOP CONNECTING";
-    isRunning = true;
-
-    messagingClient.send({
-      type: "START_CONNECTING",
-      data: { isDemo: isDemoCheckBox.checked },
-    });
-  }
+  // start extension logic
+  new LinkedInExtension(messagingClient, connectBtn, isDemoCheckBox);
 }

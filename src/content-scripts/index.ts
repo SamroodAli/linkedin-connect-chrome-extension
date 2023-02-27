@@ -1,21 +1,15 @@
-// @ts-ignore
-import { OnConnectClickPayload } from "../models/Message";
 import { linkedinConnector } from "../services/LinkedinConnector";
+import { LinkedInWebPage } from "../services/LinkedinWebPage";
 import { messagingClient } from "../services/WebPageMessaging";
 
-/** Main script */
 main();
 
 async function main() {
-  messagingClient.subscribeToExtension(
-    "START_CONNECTING",
-    linkedinConnector.startConnecting
-  );
+  // subscribe to events from the extension
+  new LinkedInWebPage(
+    messagingClient,
+    linkedinConnector
+  ).subscribeToExtensionMessages();
 
-  messagingClient.subscribeToExtension(
-    "STOP_CONNECTING",
-    linkedinConnector.stopConnecting
-  );
-
-  console.log("content script ready");
+  console.log("script ready");
 }

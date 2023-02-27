@@ -1,6 +1,6 @@
 import { MessageConsumeFn } from "../models/Message";
 
-class ExtensionMessaging {
+export class ExtensionMessaging {
   activeTab?: chrome.tabs.Tab;
 
   private getActiveTab = async () => {
