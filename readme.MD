@@ -1,10 +1,31 @@
 # Linkedin Connect Chrome extension
 
-## Steps
+Hi, welcome to LinkedIn Connect Chrome extension repository.
+This extension automates connecting users you searched for in LinkedIn.
 
-1. Create a vanilla HTML, CSS and Typescript project with Vite.
-2. Add manifest.json file to public folder with our chrome extension meta data
-3. Add content script field to manifest to run scripts with access to current document
+## Disclaimer
+
+Thank you for using this demo tool. Please note that this extension is designed
+solely for demonstration purposes, and should not be used to violate LinkedIn's
+policies or to engage in any abusive behavior towards LinkedIn users.
+We strongly advise you to only use this tool to connect with individuals you know
+and to respect their privacy and boundaries. Please understand that any misuse
+of this tool may result in the suspension or termination of your LinkedIn account.
+
+## Installation ( extension under review )
+
+## How to use this extension
+
+1. Search for the users you want to connect on LinkedIn
+2. Open the extension and click 'Start connecting'. You can pause connecting by
+3. clicking on the 'Stop connecting' button.
+
+## Demo mode
+
+There is a "demo mode" checkbox that is turned on by default. Running the extension in
+Demo mode would only turn the background of the connect buttons to the color red rather than
+actually clicking them. This is useful if you want to test the functionality without actually
+connecting to users
 
 # References
 
