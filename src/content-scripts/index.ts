@@ -10,6 +10,4 @@ async function main() {
     messagingClient,
     linkedinConnector
   ).subscribeToExtensionMessages();
-
-  console.log("script ready");
 }
