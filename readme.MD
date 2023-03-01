@@ -14,6 +14,9 @@ of this tool may result in the suspension or termination of your LinkedIn accoun
 
 ## Installation ( extension under review )
 
+The extension is under review by the chrome developer team and is
+currently unavailable for installation.
+
 ## How to use this extension
 
 1. Search for the users you want to connect on LinkedIn
@@ -27,7 +30,23 @@ Demo mode would only turn the background of the connect buttons to the color red
 actually clicking them. This is useful if you want to test the functionality without actually
 connecting to users
 
+## Code Architecture
+
+The extension is built with HTML, CSS and Javascript. The file extension.html in src
+provides the markup for the extension as well tailwind classes for styling. The CSS file 'extension.css' in src imports tailwind utilities.
+In addition, there are two entry point scripts, one with the extension's HTML document API for
+managing the extension's elements and another with the active tabs API for managing the web page.
+They are respectively in 'content-scripts' and 'extension-scripts' folder.
+Both these scripts use other services which are in the src/services folder
+
+| Particular          | File path                      |
+| ------------------- | ------------------------------ |
+| Extension markup    | src/extension.html             |
+| Extension styling   | src/extension.css              |
+| Extension scripting | src/extension-scripts/index.ts |
+| Web page scripting  | src/content-scripts/index.ts   |
+
 # References
 
-[How to create a chrome extension - Freecodecamp](https://www.freecodecamp.org/news/building-chrome-extension/)
-[Message passing between content and extension pop up script](https://developer.chrome.com/docs/extensions/mv3/messaging/)
+1. [How to create a chrome extension - Freecodecamp](https://www.freecodecamp.org/news/building-chrome-extension/)
+2. [Message passing between content and extension pop up script](https://developer.chrome.com/docs/extensions/mv3/messaging/)
