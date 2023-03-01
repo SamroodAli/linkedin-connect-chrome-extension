@@ -30,6 +30,19 @@ Demo mode would only turn the background of the connect buttons to the color red
 actually clicking them. This is useful if you want to test the functionality without actually
 connecting to users
 
+## Development
+
+Chrome requires bundling the final output as a zip file. I also love hot module replacement ( live reloads).
+I configured Vite for the same.
+
+1. Run this command to start the dev server. It will keep building the extension as you make changes.
+
+```bash
+npm run build:watch
+```
+
+1. You can update the extension in the chrome extensions manager page by clicking on the 'update' button.
+
 ## Code Architecture
 
 The extension is built with HTML, CSS and Javascript. The file extension.html in src
